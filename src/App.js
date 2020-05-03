@@ -17,6 +17,12 @@ class App extends Component { //2- create the Class ps:Component is a property o
 
   }
 
+  componentDidMount() { //mounting is when react puts components on the page, renders it in the DOM for the 1º time. When that happens, the block of code inside of it is called
+    fetch('http://jsonplaceholder.typicode.com/users') //fecth is a js method. It will make an API request to the url, returning a PROMISE
+    .then(response => response.json())//this makes the response readable for react in the form of json
+    .then(users => console.log(users))
+  }
+
 //PS: everytime you see a MAP() function INSIDE OF RENDER, or a list of the SAME JSW elements in sequence, you'll need a KEY attribute
 
 
